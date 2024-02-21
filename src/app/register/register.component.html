@@ -1,0 +1,67 @@
+<header>
+  <img src="./assets/chart.gif" id="logo" />
+  <h1><a href="index.html">Skillsoft Weight Tracker</a></h1>
+</header>
+<nav>
+  <ul>
+    <li><a href="index.html">home</a></li>
+    <li><a href="enterweight.html">enter weight</a></li>
+    <li><a href="myweights.html">my weight</a></li>
+    <li><a href="teamweights.html">team weights</a></li>
+  </ul>
+</nav>
+<div id="container">
+  <main>
+    <div id="container">
+      <h2 class="pb-2">Register for Competition</h2>
+      <form [formGroup] = "formRegister" (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+          <label for="username">User name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            formControlName = "username"
+          >
+          <span *ngIf="formRegister.controls['username'].errors">Invalid</span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName = "password"
+          >
+          <span *ngIf="formRegister.controls['password'].errors">Invalid</span>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled] = "!formRegister.valid"
+        >
+        Submit
+        </button>
+      </form>
+    </div>
+  </main>
+  <aside>
+    <section>
+      <h4>Health News</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore   et dolore magna aliqua.
+      </p>
+    </section>
+    <section>
+      <h4>Healthy Recipes</h4>
+      <a href="">grilled chicken</a>
+      <a href="">minced beef patties</a>
+      <a href="">potato pancakes</a>
+      <a href="">fish stew</a>
+    </section>
+  </aside>
+</div>
+<footer>
+  <hr />
+  Copyright &copy; 2022. All rights reserved
+</footer>
