@@ -1,5 +1,8 @@
 # Skills
 
+**Disclaimer**
+This repository has been created during lessons 1-7 on "Angular Bootcamp July 2023". The contents of the repository are based on Skillsoft/Percipio learning content originally created by Axle Barr. I have but modified a default Angular project to match the lesson instructions.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
 
 ## Development server
