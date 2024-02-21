@@ -23,12 +23,14 @@ header h1 {
 
 header h1 a {
 	color:red;
+	text-decoration: none;
 }
 
 nav{
 	text-align:left;
 	background-color:lightgray;
 	border-bottom:1px solid gray;
+	height: 46px;
 }
 
 nav li, nav a {
@@ -82,7 +84,7 @@ aside section a{
 	margin-bottom: 60px;
 }
 
-label{
+/* label{
 	display:inline-block;
 	width:150px;
 	text-align:right;
@@ -91,7 +93,7 @@ label{
 button{
 	margin-left:155px;
 	margin-top:10px;
-}
+} */
 
 .formSeparator{
 	margin-top:10px;
@@ -100,7 +102,7 @@ button{
 #logo{
 	float:right;
 	width:160px;
-	height:88px;
+	height:100px;
 }
 
 .liYellow{
