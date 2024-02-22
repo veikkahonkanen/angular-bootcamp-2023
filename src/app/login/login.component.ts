@@ -40,9 +40,23 @@ export class LoginComponent {
     this.user$ = this.http.get(
       "http://localhost:3000/employees",
       {
-        params: { /*TODO*/ }
+        params: { username: currentUser }
       }
     );
+
+    /*
+    this.user$.subscribe((result) => {
+      // console.log(result);
+      if (currentUser == result[0].username && currentPassword == result[0].password) {
+        // console.log("User is valid");
+        localStorage.setItem("validUser", currentUser);
+        this.router.navigateByUrl('/home');
+      } else {
+        console.log("Invalid user");
+        this.router.navigateByUrl('/login');
+      }
+    });
+    */
 
     this.loginStatus$ = this.auth.login(this.formLogin.value);
     this.loginStatus$.subscribe(

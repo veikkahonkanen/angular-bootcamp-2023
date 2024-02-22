@@ -18,26 +18,24 @@ export class AuthService {
     this.user$ = this.http.get(
       'http://localhost:3000/employees', 
       {
-        params:{username:currentUser}
+        params:{ username: currentUser }
       }
     );
-    this.user$.subscribe(
-      data =>{
-        if(data[0]){
-          if(currentUser == data[0].username && currentPassword == data[0].password){
-            localStorage.setItem('validuser', currentUser);
-            isLoggedIn = true;
-            subject.next(isLoggedIn);
-          } else {
-            isLoggedIn = false;
-            subject.next(isLoggedIn);           
-          }    
+    this.user$.subscribe((data) => {
+      if (data[0]) {
+        if(currentUser == data[0].username && currentPassword == data[0].password){
+          localStorage.setItem('validuser', currentUser);
+          isLoggedIn = true;
+          subject.next(isLoggedIn);
         } else {
           isLoggedIn = false;
-          subject.next(isLoggedIn);
-        }
+          subject.next(isLoggedIn);           
+        }    
+      } else {
+        isLoggedIn = false;
+        subject.next(isLoggedIn);
       }
-    );
+    });
     return subject.asObservable();
   }
 }
